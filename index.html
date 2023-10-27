@@ -3,14 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Hangman</title>
   </head>
   <body>
+    <!-- hint button -->
+    <button class="js-modal-trigger" data-target="modal-js-example">
+      Hint
+    </button>
+
+    <!-- Modal for hint -->
+    <div id="modal-js-example" class="modal">
+      <div class="modal-background"></div>
+    
+      <div class="modal-content">
+        <div class="box">
+          <h2>Are You Sure?</h2>
+          <p>Using a hint will result in half points.</p>
+          <!-- Your content -->
+          <button id="show-hint-btn">Show Hint</button>
+        </div>
+      </div>
+    
+      <button class="modal-close is-large" aria-label="close"></button>
+      
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="./assets/js/script.js"></script>
