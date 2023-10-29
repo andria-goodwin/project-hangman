@@ -1,3 +1,12 @@
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems);
+  });
+
+
+//   document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     // Functions to open and close a modal
     function openModal($el) {
@@ -39,6 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
         closeAllModals();
       }
     });
+
+//   });
+
+
+  
+ 
+
 
     $('#show-hint-btn').click(()=>{
         var hintEl = document.createElement('p')

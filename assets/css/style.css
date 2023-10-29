@@ -1,0 +1,66 @@
+/* Main colors for the game, whatever color we decide can be change here and go into effect everywhere else. */
+:root {
+    --bgcolor: rgb(26, 25, 25);
+    --textColor: rgb(185, 77, 77);
+}
+/* Adjusting background color and viewport height */
+body {
+    background-color: var(--bgcolor);
+    min-height: 100vh;
+}
+/* This is our title on the homepage, also I have a second option for a font just incase. */
+#homeTitle {
+    color: var(--textColor);
+    text-align: center;
+    font-size: 120px;
+    font-family: 'Nosifer', sans-serif;
+    /* font-family: 'Metal Mania', sans-serif; */
+}
+/* Homepage start button size, position, and color. */
+.startBtn {
+  font-size: 40px;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* specifically the text in the homepage start button */
+#startText {
+    color: var(--bgcolor);
+}
+/* High Score button size, position, and color. */
+.btn {
+    font-size: 25px;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* Targeting our header on the high score modal screen */
+#scoresTitle {
+    font-size: 36px;
+    color: var(--textColor);
+}
+/* Targeting both Modal boxes */
+.box {
+    background-color: var(--bgcolor);
+    color: var(--textColor);
+    font-size: 20px;
+}
+/* Start game button within the modal */
+.starter {
+    position: absolute;
+    left: 60%;
+    top: 35%;
+    background-color: var(--textColor);
+    color: var(--bgcolor);
+    font-size: 30px;
+}
