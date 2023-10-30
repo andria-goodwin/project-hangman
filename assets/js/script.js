@@ -1,72 +1,65 @@
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems);
-  });
-
+document.addEventListener("DOMContentLoaded", function () {
+  var elems = document.querySelectorAll(".modal");
+  var instances = M.Modal.init(elems);
+});
 
 //   document.addEventListener('DOMContentLoaded', () => {
-document.addEventListener('DOMContentLoaded', () => {
-    // Functions to open and close a modal
-    function openModal($el) {
-      $el.classList.add('is-active');
-    }
-  
-    function closeModal($el) {
-      $el.classList.remove('is-active');
-    }
-  
-    function closeAllModals() {
-      (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-        closeModal($modal);
-      });
-    }
-  
-    // Add a click event on buttons to open a specific modal
-    (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-      const modal = $trigger.dataset.target;
-      const $target = document.getElementById(modal);
-  
-      $trigger.addEventListener('click', () => {
-        openModal($target);
-      });
+document.addEventListener("DOMContentLoaded", () => {
+  // Functions to open and close a modal
+  function openModal($el) {
+    $el.classList.add("is-active");
+  }
+
+  function closeModal($el) {
+    $el.classList.remove("is-active");
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll(".modal") || []).forEach(($modal) => {
+      closeModal($modal);
     });
-  
-    // Add a click event on various child elements to close the parent modal
-    (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-      const $target = $close.closest('.modal');
-  
-      $close.addEventListener('click', () => {
-        closeModal($target);
-      });
+  }
+
+  // Add a click event on buttons to open a specific modal
+  (document.querySelectorAll(".js-modal-trigger") || []).forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener("click", () => {
+      openModal($target);
     });
-  
-    // Add a keyboard event to close all modals
-    document.addEventListener('keydown', (event) => {
-      if (event.code === 'Escape') {
-        closeAllModals();
-      }
-    });
-
-//   });
-
-
-  
- 
-
-
-    $('#show-hint-btn').click(()=>{
-        var hintEl = document.createElement('p')
-        // COLLIN this is where the definition text will go for the hint
-        hintEl.textContent = "definition text here";
-        document.querySelector('.box').appendChild(hintEl);
-    })
   });
 
+  // Add a click event on various child elements to close the parent modal
+  (
+    document.querySelectorAll(
+      ".modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button"
+    ) || []
+  ).forEach(($close) => {
+    const $target = $close.closest(".modal");
 
+    $close.addEventListener("click", () => {
+      closeModal($target);
+    });
+  });
 
-  
+  // Add a keyboard event to close all modals
+  document.addEventListener("keydown", (event) => {
+    if (event.code === "Escape") {
+      closeAllModals();
+    }
+  });
+
+  //   });
+
+  $("#show-hint-btn").click(() => {
+    var hintEl = document.createElement("p");
+    // COLLIN this is where the definition text will go for the hint
+    hintEl.textContent = "definition text here";
+    document.querySelector(".box").appendChild(hintEl);
+  });
+});
+
 // datamuse api link currently showing relative things to animals
 var randomWordApi = "https://api.datamuse.com/words?rel_trg=animals";
 
@@ -115,7 +108,7 @@ function blankSpaces() {
     wordDisplayed.push("_");
   }
 
-  console.log(wordDisplayed.join(" "));
+  $("#letter-box").text(wordDisplayed.join(" "));
 }
 
 // Currently the getDefinition function is temporary just to show that it works to give a definition to the console
@@ -138,7 +131,7 @@ for (var i = 65; 90 >= i; i++) {
   var button = document.createElement("button");
   button.textContent = c;
   button.setAttribute("class", "button");
-  button.setAttribute("id", "ltr-btn")
+  button.setAttribute("id", "ltr-btn");
   box.append(button);
 }
 
