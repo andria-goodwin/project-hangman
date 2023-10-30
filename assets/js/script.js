@@ -130,7 +130,7 @@ function getDefinition() {
 }
 
 // Temporary spot for testing the keyboard element going onto the screen (not correctly linked to the right element/it doesn't exist yet)
-var box = document.getElementById("box");
+var box = document.getElementById("btn-box");
 var c;
 for (var i = 65; 90 >= i; i++) {
   // A-65, Z-90
@@ -138,6 +138,7 @@ for (var i = 65; 90 >= i; i++) {
   var button = document.createElement("button");
   button.textContent = c;
   button.setAttribute("class", "button");
+  button.setAttribute("id", "ltr-btn")
   box.append(button);
 }
 

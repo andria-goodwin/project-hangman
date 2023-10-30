@@ -18,15 +18,15 @@ body {
 }
 /* Homepage start button size, position, and color. */
 .startBtn {
-  font-size: 40px;
-  color: var(--bgcolor);
-  background-color: var(--textColor);
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 /* specifically the text in the homepage start button */
 #startText {
@@ -35,14 +35,14 @@ body {
 /* High Score button size, position, and color. */
 .btn {
     font-size: 25px;
-  color: var(--bgcolor);
-  background-color: var(--textColor);
-  margin: 0;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    margin: 0;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 /* Targeting our header on the high score modal screen */
 #scoresTitle {
@@ -63,4 +63,74 @@ body {
     background-color: var(--textColor);
     color: var(--bgcolor);
     font-size: 30px;
+}
+
+/* quit button */
+.q-btn {
+    position: absolute;
+    font-size: 25px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    top: 3%;
+    left: 3%;
+}
+
+/* hint button */
+.h-btn {
+    position: absolute;
+    font-size: 25px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    top: 15%;
+    left: 3%;
+    
+}
+
+/* show hint button inside hint button modal */
+#show-hint-btn {
+    margin: 1%;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+}
+
+/* where strikes are counted in upper right hand corner */
+#counter {
+    position: absolute;
+    color: var(--textColor);
+    top: 3%;
+    right: 3%;
+    font-size: 25px;
+    text-align: center;
+}
+
+/* container for all gameplay elements */
+#game-box {
+    border: 2px solid var(--textColor);
+    margin-left: 3%;
+    margin-right: 3%;
+    text-align: center;
+}
+
+/* Container for the letters guessed/to be guessed */
+#letter-box {
+    position: relative;
+    top: 50%;
+    font-size: 50px;
+}
+
+/* A-Z letter buttons */
+#ltr-btn {
+    background-color: rgb(49, 49, 49);
+    color: var(--textColor);
+    border-color: black;
+}
+
+#ltr-btn:hover {
+    background-color: var(--bgcolor);
+    color: var(--textColor);
+}
+
+/* hide class used to switch between images */
+.hide {
+    display: none;
 }

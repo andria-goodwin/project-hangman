@@ -8,35 +8,74 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Nosifer&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Hangman</title>
   </head>
   <body>
-    <!-- hint button -->
-    <button class="js-modal-trigger" data-target="modal-js-example">
-      Hint
-    </button>
+    <header>
+      <!-- title -->
+      <h1 id="homeTitle">HANGMAN</h1>
 
-    <!-- Modal for hint -->
-    <div id="modal-js-example" class="modal">
-      <div class="modal-background"></div>
-    
-      <div class="modal-content">
-        <div class="box">
-          <h2>Are You Sure?</h2>
-          <p>Using a hint will result in half points.</p>
-          <!-- Your content -->
-          <button id="show-hint-btn">Show Hint</button>
-        </div>
-      </div>
-    
-      <button class="modal-close is-large" aria-label="close"></button>
+      <!-- quit button -->
+      <a class="q-btn button" href="homepage.html">Quit</a>
+      <!-- hint button -->
+      <button class="js-modal-trigger h-btn button" data-target="modal-js-example">
+        Hint
+      </button>
+
+      <!-- Modal for hint -->
+      <div id="modal-js-example" class="modal">
+        <div class="modal-background"></div>
       
-    </div>
+        <div class="modal-content">
+          <div class="box">
+            <h2>Are You Sure?</h2>
+            <p>Using a hint will result in using a strike.</p>
+            <button class="button" id="show-hint-btn">Show Hint</button>
+            <!-- We need to connect this button to a strike trigger in js -->
+          </div>
+        </div>
+      
+        <button class="modal-close is-large" aria-label="close"></button>
+      </div>
+
+      <!-- counter for strikes left -->
+      <p id="counter">Strikes<br>Left:<br><span id="strikes"></span></p>
+    </header>
+
+    <!-- main gameplay area -->
+    <main>
+      <div class="box" id="game-box">
+        <div class="columns is-mobile">
+          <div class="column is-one-third">
+            <!-- images will be switched by adding and removing the 'hide' class -->
+            <img id="game-start" src="./assets/images/gallows-start.png"/>
+            <img class="hide" id="strike1" src="./assets/images/gallows1.png"/>
+            <img class="hide" id="strike2" src="./assets/images/gallows2.png"/>
+            <img class="hide" id="strike3" src="./assets/images/gallows3.png"/>
+            <img class="hide" id="strike4" src="./assets/images/gallows4.png"/>
+            <img class="hide" id="strike5" src="./assets/images/gallows5.png"/>
+            <img class="hide" id="strike6" src="./assets/images/gallows6.png"/>
+            <img class="hide" id="game-over" src="./assets/images/gallows-end.png"/>
+          </div>
+          <div class="column is-two-thirds">
+            <p>Guess a letter... if you dare!</p>
+            <div id="letter-box">_ _ _ _ _ _ _ _</div>
+            <!-- This div is where we should the letters guessed/to be guessed -->
+          </div>
+        </div>
+
+        <!-- This div contains the letter buttons -->
+        <div id="btn-box"></div>
+      </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <div id="box"></div>
+    
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/js/script.js"></script>
