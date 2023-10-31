@@ -53,9 +53,12 @@ document.addEventListener("DOMContentLoaded", () => {
   //   });
 
   $("#show-hint-btn").click(() => {
+    $(".hint-text").remove();
+
     var hintEl = document.createElement("p");
     // COLLIN this is where the definition text will go for the hint
-    hintEl.textContent = "definition text here";
+    hintEl.textContent = getDefinition();
+    $(hintEl).addClass("hint-text");
     document.querySelector(".box").appendChild(hintEl);
   });
 });
@@ -85,6 +88,7 @@ var score = 0;
 var guessingWordLetters = [];
 var numOfBlankSpots = 0;
 var wordDisplayed = [];
+var definition = "";
 
 // Takes the data from the random word array and then uses math.random to get only one word from the long array
 function storeData(randomWord) {
@@ -118,8 +122,11 @@ function getDefinition() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
+      definition = data[0].meanings[0].definitions[0].definition;
+      // console.log(definition);
     });
+  console.log(definition);
+  return definition;
 }
 
 // Temporary spot for testing the keyboard element going onto the screen (not correctly linked to the right element/it doesn't exist yet)
