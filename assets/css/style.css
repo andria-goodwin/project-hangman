@@ -6,13 +6,14 @@
 /* Adjusting background color and viewport height */
 body {
     background-color: var(--bgcolor);
-    min-height: 100vh;
+    height: 100vh;
+    /* min-width: 100vh; */
 }
 /* This is our title on the homepage, also I have a second option for a font just incase. */
 #homeTitle {
     color: var(--textColor);
     text-align: center;
-    font-size: 120px;
+    font-size: 100px;
     font-family: 'Nosifer', sans-serif;
     /* font-family: 'Metal Mania', sans-serif; */
 }
@@ -133,4 +134,206 @@ body {
 /* hide class used to switch between images */
 .hide {
     display: none;
+}
+/* Media query used to fit the game on different sized screens */
+/* Fits the screen size for smaller laptop windows */
+@media (max-width: 925px) {
+    /* Adjusting h1 size */
+    #homeTitle {
+        color: var(--textColor);
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Nosifer', sans-serif;
+        /* font-family: 'Metal Mania', sans-serif; */
+    }
+    /* Adjusting quit button size */
+    .q-btn {
+        position: absolute;
+        font-size: 15px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        top: 3%;
+        left: 3%;
+    }
+    /* Adjusting hint button size */
+    .h-btn {
+        position: absolute;
+        font-size: 15px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        top: 3%;
+        left: 12%;
+    }
+    /* Strike font size */
+    #counter {
+        position: absolute;
+        color: var(--textColor);
+        top: 1%;
+        right: 4%;
+        font-size: 25px;
+        text-align: center;
+    }
+}
+/* Fits the screen size for Ipads and Tablets */
+@media (max-width: 768px) {
+        /* Adjusting h1 size */
+    #homeTitle {
+        color: var(--textColor);
+        text-align: center;
+        font-size: 60px;
+        font-family: 'Nosifer', sans-serif;
+        /* font-family: 'Metal Mania', sans-serif; */
+    }
+    /* Adjusting viewport height */
+    body {
+        /* max-width: 100vh; */
+        max-height: 100vh;
+    }
+        /* Adjusting quit button size */
+    .q-btn {
+        position: absolute;
+        font-size: 10px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        top: 1%;
+        left: 3%;
+    }
+        /* Adjusting hint button size */
+    .h-btn {
+        position: absolute;
+        font-size: 10px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        top: 5%;
+        left: 3%;
+    }
+        /* Strike font size */
+    #counter {
+        position: absolute;
+        color: var(--textColor);
+        top: 1%;
+        right: 4%;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+/* Fits the screen size for most phones */
+@media (max-width: 530px) {
+        /* Adjusting h1 size */
+    #homeTitle {
+        color: var(--textColor);
+        text-align: center;
+        font-size: 40px;
+        font-family: 'Nosifer', sans-serif;
+        /* font-family: 'Metal Mania', sans-serif; */
+    }
+    /* Adjusting viewport height */
+    body {
+        /* max-width: 100vh; */
+        max-height: 100vh;
+    }
+/* Adjusting the size of our start button */
+    .startBtn {
+        font-size: 20px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+/* Adjusting the size of our View Highscores button */
+    .btn {
+        font-size: 15px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        margin: 0;
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+/* Adjusting the size of modal content box */
+    .box {
+        background-color: var(--bgcolor);
+        color: var(--textColor);
+        font-size: 10px;
+    }
+/* Adjusting the size of our start button in the modal */
+    .starter {
+        position: absolute;
+        left: 60%;
+        top: 35%;
+        background-color: var(--textColor);
+        color: var(--bgcolor);
+        font-size: 10px;
+    }
+/* Adjusting the size of our font in the high score modal */
+    #scoresTitle {
+        font-size: 16px;
+        color: var(--textColor);
+    }
+        /* Adjusting quit button size */
+    .q-btn {
+        position: absolute;
+        font-size: 8px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        top: 1%;
+        left: 3%;
+    }
+        /* Adjusting hint button size */
+    .h-btn {
+        position: absolute;
+        font-size: 8px;
+        color: var(--bgcolor);
+        background-color: var(--textColor);
+        top: 5%;
+        left: 3%;
+    }
+        /* Strike font size */
+    #counter {
+        position: absolute;
+        color: var(--textColor);
+        top: 1%;
+        right: 4%;
+        font-size: 10px;
+        text-align: center;
+    }
+    
+}
+/* Fits the screen size for anything smaller than most phones */
+@media (max-width: 370px) {
+            /* Adjusting h1 size */
+    #homeTitle {
+        color: var(--textColor);
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Nosifer', sans-serif;
+        /* font-family: 'Metal Mania', sans-serif; */
+    }
+        /* Adjusting viewport height */
+    body {
+        max-width: 100vh;
+        max-height: 100vh;
+    }
+    /* Strike font size */
+    #counter {
+        position: absolute;
+        color: var(--textColor);
+        top: 1%;
+        right: 4%;
+        font-size: 5px;
+        text-align: center;
+    }
+    /* Adjusting the size of our letter boxes */
+    #letter-box {
+        position: relative;
+        top: 50%;
+        font-size: 40px;
+    }
+
 }
