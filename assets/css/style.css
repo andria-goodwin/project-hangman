@@ -74,6 +74,7 @@ body {
     background-color: var(--textColor);
     top: 3%;
     left: 3%;
+    padding: 1%;
 }
 
 /* hint button */
@@ -82,9 +83,9 @@ body {
     font-size: 25px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 15%;
+    top: 12%;
     left: 3%;
-    
+    padding: 1%;
 }
 
 /* show hint button inside hint button modal */
@@ -107,8 +108,7 @@ body {
 /* container for all gameplay elements */
 #game-box {
     border: 2px solid var(--textColor);
-    margin-left: 3%;
-    margin-right: 3%;
+    margin: 3%;
     text-align: center;
 }
 
@@ -161,8 +161,8 @@ body {
         font-size: 15px;
         color: var(--bgcolor);
         background-color: var(--textColor);
-        top: 3%;
-        left: 12%;
+        top: 9%;
+        left: 3%;
     }
     /* Strike font size */
     #counter {
@@ -170,7 +170,7 @@ body {
         color: var(--textColor);
         top: 1%;
         right: 4%;
-        font-size: 25px;
+        font-size: 20px;
         text-align: center;
     }
 }
@@ -215,6 +215,13 @@ body {
         right: 4%;
         font-size: 15px;
         text-align: center;
+    }
+
+    /* Container for the letters guessed/to be guessed */
+    #letter-box {
+        position: relative;
+        top: 35%;
+        font-size: 40px;
     }
 }
 /* Fits the screen size for most phones */
@@ -291,7 +298,7 @@ body {
         font-size: 8px;
         color: var(--bgcolor);
         background-color: var(--textColor);
-        top: 5%;
+        top: 4%;
         left: 3%;
     }
         /* Strike font size */
@@ -326,7 +333,7 @@ body {
         color: var(--textColor);
         top: 1%;
         right: 4%;
-        font-size: 5px;
+        font-size: 8px;
         text-align: center;
     }
     /* Adjusting the size of our letter boxes */
@@ -334,6 +341,12 @@ body {
         position: relative;
         top: 50%;
         font-size: 40px;
+    }
+
+    #letter-box {
+        position: relative;
+        top: 25%;
+        font-size: 30px;
     }
 
 }
