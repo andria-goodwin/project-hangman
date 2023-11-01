@@ -1,8 +1,3 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".modal");
-  var instances = M.Modal.init(elems);
-});
-
 document.addEventListener("DOMContentLoaded", () => {
   // Functions to open and close a modal
   function openModal($el) {
@@ -59,9 +54,26 @@ $("#start-game-btn").click(() => {
 });
 
 // Using local storage to add high scores onto the modal
-$("#highscores-btn").click(() => {
-  var name = localStorage.getItem("name");
-  var score = localStorage.getItem("score");
+$("#highscores-btn").on("click", function () {
+  // getItem "highscores" from localStorage or set to an empty array
+  var highscore = JSON.parse(window.localStorage.getItem('highscores')) || [];
+  
+  // sorts highscores from highest to lowest
+  highscore.sort(function (a, b) {
+    return b.score - a.score;
+  });
 
-  // $("p").append("Name: " + name + " Score: " + score);
+  for (var i = 0; i < highscore.length; i += 1) {
+    // create list item for each highscore
+    var liEl = document.createElement('li');
+    liEl.textContent = highscore[i].name + ' - ' + highscore[i].score;
+
+    // display highscores to the page
+    var olEl = document.querySelector('#highscore-list');
+    olEl.appendChild(liEl);
+  }
+
+
 });
+
+

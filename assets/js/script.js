@@ -184,9 +184,24 @@ function gameOver() {
   $("#leaderboard-score").text(score);
 }
 
+// save scores to local storage
 $("#leaderboard-submission").on("submit", function () {
-  localStorage.setItem("name", $("#first-name").val());
-  localStorage.setItem("score", $("#leaderboard-score").text());
+	var name = $("#first-name").val().trim();
+	
+  // make sure they enter a name
+	if (name === "") {
+		alert("You must enter a name to save your score.")
+	} else {
+		var highscores = 
+		JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+		var newHighscore = {
+			score: $("#leaderboard-score").text(),
+			name: name,
+		};
+		highscores.push(newHighscore);
+		window.localStorage.setItem("highscores", JSON.stringify(highscores));
+	}
 });
 
 // blankSpaces function creates the (_ _ _) to show how many letters the word to guess is
