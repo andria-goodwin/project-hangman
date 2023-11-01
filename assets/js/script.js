@@ -140,6 +140,7 @@ function updateStrikes() {
   if (strikes === 0) {
     setTimeout(() => {
       gameOver();
+      document.getElementById("answer").innerHTML = ("The answer was " + (guessingWord.word));
     }, 500);
   }
 }
