@@ -50,6 +50,12 @@ body {
     font-size: 36px;
     color: var(--textColor);
 }
+
+/* highscores list */
+#highscore-list {
+    margin-left: 5%;
+}
+
 /* Targeting both Modal boxes */
 .box {
     background-color: var(--bgcolor);
@@ -115,7 +121,7 @@ body {
 /* Container for the letters guessed/to be guessed */
 #letter-box {
     position: relative;
-    top: 50%;
+    top: 30%;
     font-size: 50px;
 }
 
@@ -129,6 +135,20 @@ body {
 #ltr-btn:hover {
     background-color: var(--bgcolor);
     color: var(--textColor);
+}
+
+/* container for score submit form modal */
+#leaderboard-submission {
+    text-align: center;
+}
+
+#scoresTitle {
+    text-align: center;
+}
+
+/* p elements of score submit form modal */
+#leaderboard-submission p {
+    margin: 3%
 }
 
 /* hide class used to switch between images */
@@ -220,7 +240,7 @@ body {
     /* Container for the letters guessed/to be guessed */
     #letter-box {
         position: relative;
-        top: 35%;
+        top: 20%;
         font-size: 40px;
     }
 }

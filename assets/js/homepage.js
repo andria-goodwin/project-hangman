@@ -54,7 +54,7 @@ $("#start-game-btn").click(() => {
 });
 
 // Using local storage to add high scores onto the modal
-$("#highscores-btn").on("click", function () {
+function showHighscores() {
   // getItem "highscores" from localStorage or set to an empty array
   var highscore = JSON.parse(window.localStorage.getItem('highscores')) || [];
   
@@ -72,8 +72,6 @@ $("#highscores-btn").on("click", function () {
     var olEl = document.querySelector('#highscore-list');
     olEl.appendChild(liEl);
   }
+}
 
-
-});
-
-
+showHighscores();

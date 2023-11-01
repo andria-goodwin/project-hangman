@@ -106,6 +106,8 @@
           </div>
           <div class="column is-two-thirds is-mobile">
             <p>Guess a letter... if you dare!</p>
+            <p>Mode: <span id="game-mode"></span><br>
+            Topic: <span id="game-topic"></span></p>
             <div id="letter-box">_ _ _ _ _ _ _ _</div>
             <!-- This div is where we should the letters guessed/to be guessed -->
           </div>
@@ -130,7 +132,7 @@
                 placeholder="First Name"
               />
               <p>Your score: <span id="leaderboard-score"></span></p>
-              <input class="button is-success" type="submit" value="Submit" />
+              <input id="submit-btn" class="button is-success" type="submit" value="Submit" />
             </form>
           </div>
         </div>
