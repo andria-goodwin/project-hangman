@@ -1,7 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
-  var elems = document.querySelectorAll(".modal");
-  var instances = M.Modal.init(elems);
-});
+// document.addEventListener("DOMContentLoaded", function () {
+//   var elems = document.querySelectorAll(".modal");
+//   var instances = M.Modal.init(elems);
+// });
 
 //   document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
@@ -105,6 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
   function storeData(wordArray) {
     var targetLength;
     var difficulty = localStorage.getItem("difficulty");
+  if (strikes === 0) {
+    setTimeout(() => {
+      gameOver();
+      document.getElementById("answer").innerHTML = ("The answer was " + (guessingWord.word));
+    }, 500);
+  }
+// }
 
     $("#game-mode").text(difficulty);
 
@@ -146,6 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (strikes === 0) {
       setTimeout(() => {
         gameOver();
+      document.getElementById("answer").innerHTML = ("The answer was " + (guessingWord.word));
       }, 500);
     }
   }
