@@ -161,6 +161,10 @@ document.addEventListener("DOMContentLoaded", () => {
   // Changes the picture according to the amount of strikes
   function updateStrikesPicture() {
     switch (strikes) {
+      case 7:
+        $(".strike-images").addClass("hide");
+        $("#start-game-picture").removeClass("hide");
+        break;
       case 6:
         $(".strike-images").addClass("hide");
         $("#strike1").removeClass("hide");
@@ -215,6 +219,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       highscores.push(newHighscore);
       window.localStorage.setItem("highscores", JSON.stringify(highscores));
+      // window.location.replace("index.html");
     }
   });
 
