@@ -64,8 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   $("#show-hint-btn").click(showHint);
 
-
-
   // dictionary api currently ready to add a word onto the end of the string
   var definitionApi = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 
@@ -105,13 +103,14 @@ document.addEventListener("DOMContentLoaded", () => {
   function storeData(wordArray) {
     var targetLength;
     var difficulty = localStorage.getItem("difficulty");
-  if (strikes === 0) {
-    setTimeout(() => {
-      gameOver();
-      document.getElementById("answer").innerHTML = ("The answer was " + (guessingWord.word));
-    }, 500);
-  }
-// }
+    if (strikes === 0) {
+      setTimeout(() => {
+        gameOver();
+        document.getElementById("answer").innerHTML =
+          "The answer was " + guessingWord.word;
+      }, 500);
+    }
+    // }
 
     $("#game-mode").text(difficulty);
 
@@ -151,9 +150,11 @@ document.addEventListener("DOMContentLoaded", () => {
     $("#strikes").text(strikes);
 
     if (strikes === 0) {
+      $("#btn-box").empty();
       setTimeout(() => {
         gameOver();
-      document.getElementById("answer").innerHTML = ("The answer was " + (guessingWord.word));
+        document.getElementById("answer").innerHTML =
+          "The answer was " + guessingWord.word;
       }, 500);
     }
   }
@@ -203,12 +204,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // save scores to local storage
-  $("#leaderboard-submission").on("submit", function () {
+  $("#leaderboard-submission").on("submit", function (e) {
+    e.preventDefault();
+
     var name = $("#first-name").val().trim();
 
     // make sure they enter a name
     if (name === "") {
-      alert("You must enter a name to save your score.")
+      alert("You must enter a name to save your score.");
     } else {
       var highscores =
         JSON.parse(window.localStorage.getItem("highscores")) || [];
@@ -219,7 +222,7 @@ document.addEventListener("DOMContentLoaded", () => {
       };
       highscores.push(newHighscore);
       window.localStorage.setItem("highscores", JSON.stringify(highscores));
-      // window.location.replace("index.html");
+      window.location.replace("index.html");
     }
   });
 
@@ -272,6 +275,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       $("#hint-text-container").addClass("hide");
       $(".strike-images").addClass("hide");
+      $("#hint-question").removeClass("hide");
       updateStrikesPicture();
       $("#btn-box").empty();
       createButtons();
@@ -344,5 +348,4 @@ document.addEventListener("DOMContentLoaded", () => {
       reset();
     }
   }
-
 });
