@@ -17,6 +17,14 @@ body {
     font-family: 'Nosifer', sans-serif;
     /* font-family: 'Metal Mania', sans-serif; */
 }
+
+/* directions for game */
+#directions {
+    text-align: center;
+    color: var(--textColor);
+    margin-left: 25%;
+    margin-right: 25%;
+}
 /* Homepage start button size, position, and color. */
 .startBtn {
     font-size: 40px;
