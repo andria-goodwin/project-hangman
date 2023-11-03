@@ -97,7 +97,7 @@ option {
   font-size: 25px;
   color: var(--bgcolor);
   background-color: var(--textColor);
-  top: 3%;
+  top: 20px;
   left: 3%;
   padding: 1%;
 }
@@ -108,7 +108,7 @@ option {
   font-size: 25px;
   color: var(--bgcolor);
   background-color: var(--textColor);
-  top: 12%;
+  top: 90px;
   left: 3%;
   padding: 1%;
 }
@@ -196,7 +196,7 @@ option {
     font-size: 15px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 3%;
+    top: 15px;
     left: 3%;
   }
   /* Adjusting hint button size */
@@ -205,7 +205,7 @@ option {
     font-size: 15px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 9%;
+    top: 60px;
     left: 3%;
   }
   /* Strike font size */
@@ -239,7 +239,7 @@ option {
     font-size: 10px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 1%;
+    top: 10px;
     left: 3%;
   }
   /* Adjusting hint button size */
@@ -248,7 +248,7 @@ option {
     font-size: 10px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 5%;
+    top: 40px;
     left: 3%;
   }
   /* Strike font size */
