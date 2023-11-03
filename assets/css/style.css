@@ -327,10 +327,15 @@ option {
     font-size: 16px;
     color: var(--textColor);
   }
+  /* directions for game */
+  #directions {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
   /* Adjusting quit button size */
   .q-btn {
     position: absolute;
-    font-size: 8px;
+    font-size: 10px;
     color: var(--bgcolor);
     background-color: var(--textColor);
     top: 1%;
@@ -339,10 +344,10 @@ option {
   /* Adjusting hint button size */
   .h-btn {
     position: absolute;
-    font-size: 8px;
+    font-size: 10px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 4%;
+    top: 5%;
     left: 3%;
   }
   /* Strike font size */
@@ -370,6 +375,10 @@ option {
     max-width: 100vh;
     max-height: 100vh;
   }
+  /* game directions font size */
+  #directions {
+    font-size: 15px;
+  }
   /* Strike font size */
   #counter {
     position: absolute;
@@ -379,6 +388,13 @@ option {
     font-size: 8px;
     text-align: center;
   }
+
+  .h-btn {
+    position: absolute;
+    top: 60px;
+    left: 5%;
+  }
+
   /* Adjusting the size of our letter boxes */
   #letter-box {
     position: relative;
