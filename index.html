@@ -19,9 +19,13 @@
   </head>
   <body>
     <h1 id="homeTitle">HANGMAN</h1>
-    <p id="directions">Beware: This is a non-tradition version of hangman where you continue to guess words until you run out of strikes. Test your skills and see how high of a score YOU can get.</p>
+    <p id="directions">
+      Beware: This is a non-traditional version of hangman where you continue to
+      guess words until you run out of strikes. Test your skills and see how
+      high of a score YOU can get.
+    </p>
     <button
-      class="js-modal-trigger button startBtn"
+      class="js-modal-trigger button startBtn font-metal-mania"
       data-target="modal-js-example1"
     >
       Start
@@ -35,7 +39,7 @@
           <!-- Our content for first Modal -->
           <p>Level of difficulty:</p>
           <div class="select">
-            <select id="difficulty-selection">
+            <select id="difficulty-selection" class="font-metal-mania">
               <option>Easy</option>
               <option>Medium</option>
               <option>Hard</option>
@@ -44,23 +48,29 @@
           <br />
           <p>Topic:</p>
           <div class="select">
-            <select id="topic-selection">
+            <select id="topic-selection" class="font-metal-mania">
               <option>Animals</option>
               <option>Spooky</option>
               <option>Food</option>
             </select>
           </div>
-          <a id="start-game-btn" href="gamepage.html" class="button starter"
+          <a
+            id="start-game-btn"
+            href="gamepage.html"
+            class="button starter font-metal-mania"
             >Start Game</a
           >
         </div>
       </div>
-      <button class="modal-close is-large" aria-label="close"></button>
+      <button
+        class="modal-close is-large font-metal-mania"
+        aria-label="close"
+      ></button>
     </div>
 
     <button
       id="highscores-btn"
-      class="js-modal-trigger btn button"
+      class="js-modal-trigger btn button font-metal-mania"
       data-target="modal-js-example"
     >
       High Scores
@@ -78,7 +88,10 @@
         </div>
       </div>
 
-      <button class="modal-close is-large" aria-label="close"></button>
+      <button
+        class="modal-close is-large font-metal-mania"
+        aria-label="close"
+      ></button>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

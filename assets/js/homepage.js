@@ -56,8 +56,8 @@ $("#start-game-btn").click(() => {
 // Using local storage to add high scores onto the modal
 function showHighscores() {
   // getItem "highscores" from localStorage or set to an empty array
-  var highscore = JSON.parse(window.localStorage.getItem('highscores')) || [];
-  
+  var highscore = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
   // sorts highscores from highest to lowest
   highscore.sort(function (a, b) {
     return b.score - a.score;
@@ -65,11 +65,11 @@ function showHighscores() {
 
   for (var i = 0; i < highscore.length; i += 1) {
     // create list item for each highscore
-    var liEl = document.createElement('li');
-    liEl.textContent = highscore[i].name + ' - ' + highscore[i].score;
+    var liEl = document.createElement("li");
+    liEl.textContent = highscore[i].name + " - " + highscore[i].score;
 
     // display highscores to the page
-    var olEl = document.querySelector('#highscore-list');
+    var olEl = document.querySelector("#highscore-list");
     olEl.appendChild(liEl);
   }
 }

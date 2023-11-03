@@ -1,33 +1,291 @@
 /* Main colors for the game, whatever color we decide can be change here and go into effect everywhere else. */
 :root {
-    --bgcolor: rgb(26, 25, 25);
-    --textColor: rgb(185, 77, 77);
+  --bgcolor: rgb(26, 25, 25);
+  --textColor: rgb(185, 77, 77);
 }
 /* Adjusting background color and viewport height */
 body {
-    background-color: var(--bgcolor);
-    height: 100vh;
-    /* min-width: 100vh; */
+  background-color: var(--bgcolor);
+  height: 100vh;
+  font-family: "Metal Mania", "sans-serif";
+  /* min-width: 100vh; */
 }
+
+.font-metal-mania {
+  font-family: "Metal Mania", "sans-serif";
+}
+
+option {
+  font-family: "Metal Mania", "sans-serif";
+}
+
 /* This is our title on the homepage, also I have a second option for a font just incase. */
 #homeTitle {
-    color: var(--textColor);
-    text-align: center;
-    font-size: 100px;
-    font-family: 'Nosifer', sans-serif;
-    /* font-family: 'Metal Mania', sans-serif; */
+  color: var(--textColor);
+  text-align: center;
+  font-size: 100px;
+  font-family: "Nosifer", sans-serif;
+  /* font-family: 'Metal Mania', sans-serif; */
 }
 
 /* directions for game */
 #directions {
-    text-align: center;
-    color: var(--textColor);
-    margin-left: 25%;
-    margin-right: 25%;
+  text-align: center;
+  color: var(--textColor);
+  font-size: 1.5em;
+  margin-left: 25%;
+  margin-right: 25%;
 }
 /* Homepage start button size, position, and color. */
 .startBtn {
+  font-size: 40px;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* specifically the text in the homepage start button */
+#startText {
+  color: var(--bgcolor);
+}
+/* High Score button size, position, and color. */
+.btn {
+  font-size: 25px;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+/* Targeting our header on the high score modal screen */
+#scoresTitle {
+  font-size: 36px;
+  color: var(--textColor);
+}
+
+/* highscores list */
+#highscore-list {
+  margin-left: 5%;
+}
+
+/* Targeting both Modal boxes */
+.box {
+  background-color: var(--bgcolor);
+  color: var(--textColor);
+  font-size: 20px;
+}
+/* Start game button within the modal */
+.starter {
+  position: absolute;
+  left: 60%;
+  top: 35%;
+  background-color: var(--textColor);
+  color: var(--bgcolor);
+  font-size: 30px;
+}
+
+/* quit button */
+.q-btn {
+  position: absolute;
+  font-size: 25px;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+  top: 3%;
+  left: 3%;
+  padding: 1%;
+}
+
+/* hint button */
+.h-btn {
+  position: absolute;
+  font-size: 25px;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+  top: 12%;
+  left: 3%;
+  padding: 1%;
+}
+
+/* show hint button inside hint button modal */
+#show-hint-btn {
+  margin: 1%;
+  color: var(--bgcolor);
+  background-color: var(--textColor);
+}
+
+/* where strikes are counted in upper right hand corner */
+#counter {
+  position: absolute;
+  color: var(--textColor);
+  top: 3%;
+  right: 3%;
+  font-size: 25px;
+  text-align: center;
+}
+
+/* container for all gameplay elements */
+#game-box {
+  border: 2px solid var(--textColor);
+  margin: 3%;
+  text-align: center;
+}
+
+/* Container for the letters guessed/to be guessed */
+#letter-box {
+  position: relative;
+  top: 30%;
+  font-size: 50px;
+}
+
+/* A-Z letter buttons */
+#ltr-btn {
+  background-color: rgb(49, 49, 49);
+  color: var(--textColor);
+  border-color: black;
+}
+
+#ltr-btn:hover {
+  background-color: var(--bgcolor);
+  color: var(--textColor);
+}
+
+/* container for score submit form modal */
+#leaderboard-submission {
+  text-align: center;
+}
+
+#scoresTitle {
+  text-align: center;
+}
+
+/* p elements of score submit form modal */
+#leaderboard-submission p {
+  margin: 3%;
+}
+
+/* hide class used to switch between images */
+.hide {
+  display: none;
+}
+/* Media query used to fit the game on different sized screens */
+/* Fits the screen size for smaller laptop windows */
+@media (max-width: 925px) {
+  /* Adjusting h1 size */
+  #homeTitle {
+    color: var(--textColor);
+    text-align: center;
+    font-size: 60px;
+    font-family: "Nosifer", sans-serif;
+    /* font-family: 'Metal Mania', sans-serif; */
+  }
+
+  #directions {
+    font-size: 20px;
+  }
+
+  /* Adjusting quit button size */
+  .q-btn {
+    position: absolute;
+    font-size: 15px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    top: 3%;
+    left: 3%;
+  }
+  /* Adjusting hint button size */
+  .h-btn {
+    position: absolute;
+    font-size: 15px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    top: 9%;
+    left: 3%;
+  }
+  /* Strike font size */
+  #counter {
+    position: absolute;
+    color: var(--textColor);
+    top: 1%;
+    right: 4%;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+/* Fits the screen size for Ipads and Tablets */
+@media (max-width: 768px) {
+  /* Adjusting h1 size */
+  #homeTitle {
+    color: var(--textColor);
+    text-align: center;
+    font-size: 60px;
+    font-family: "Nosifer", sans-serif;
+    /* font-family: 'Metal Mania', sans-serif; */
+  }
+  /* Adjusting viewport height */
+  body {
+    /* max-width: 100vh; */
+    max-height: 100vh;
+  }
+  /* Adjusting quit button size */
+  .q-btn {
+    position: absolute;
+    font-size: 10px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    top: 1%;
+    left: 3%;
+  }
+  /* Adjusting hint button size */
+  .h-btn {
+    position: absolute;
+    font-size: 10px;
+    color: var(--bgcolor);
+    background-color: var(--textColor);
+    top: 5%;
+    left: 3%;
+  }
+  /* Strike font size */
+  #counter {
+    position: absolute;
+    color: var(--textColor);
+    top: 1%;
+    right: 4%;
+    font-size: 15px;
+    text-align: center;
+  }
+
+  /* Container for the letters guessed/to be guessed */
+  #letter-box {
+    position: relative;
+    top: 20%;
     font-size: 40px;
+  }
+}
+/* Fits the screen size for most phones */
+@media (max-width: 530px) {
+  /* Adjusting h1 size */
+  #homeTitle {
+    color: var(--textColor);
+    text-align: center;
+    font-size: 40px;
+    font-family: "Nosifer", sans-serif;
+    /* font-family: 'Metal Mania', sans-serif; */
+  }
+  /* Adjusting viewport height */
+  body {
+    /* max-width: 100vh; */
+    max-height: 100vh;
+  }
+  /* Adjusting the size of our start button */
+  .startBtn {
+    font-size: 20px;
     color: var(--bgcolor);
     background-color: var(--textColor);
     margin: 0;
@@ -36,14 +294,10 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}
-/* specifically the text in the homepage start button */
-#startText {
-    color: var(--bgcolor);
-}
-/* High Score button size, position, and color. */
-.btn {
-    font-size: 25px;
+  }
+  /* Adjusting the size of our View Highscores button */
+  .btn {
+    font-size: 15px;
     color: var(--bgcolor);
     background-color: var(--textColor);
     margin: 0;
@@ -52,329 +306,89 @@ body {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-}
-/* Targeting our header on the high score modal screen */
-#scoresTitle {
-    font-size: 36px;
-    color: var(--textColor);
-}
-
-/* highscores list */
-#highscore-list {
-    margin-left: 5%;
-}
-
-/* Targeting both Modal boxes */
-.box {
+  }
+  /* Adjusting the size of modal content box */
+  .box {
     background-color: var(--bgcolor);
     color: var(--textColor);
-    font-size: 20px;
-}
-/* Start game button within the modal */
-.starter {
+    font-size: 10px;
+  }
+  /* Adjusting the size of our start button in the modal */
+  .starter {
     position: absolute;
     left: 60%;
     top: 35%;
     background-color: var(--textColor);
     color: var(--bgcolor);
-    font-size: 30px;
-}
-
-/* quit button */
-.q-btn {
+    font-size: 10px;
+  }
+  /* Adjusting the size of our font in the high score modal */
+  #scoresTitle {
+    font-size: 16px;
+    color: var(--textColor);
+  }
+  /* Adjusting quit button size */
+  .q-btn {
     position: absolute;
-    font-size: 25px;
+    font-size: 8px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 3%;
+    top: 1%;
     left: 3%;
-    padding: 1%;
-}
-
-/* hint button */
-.h-btn {
+  }
+  /* Adjusting hint button size */
+  .h-btn {
     position: absolute;
-    font-size: 25px;
+    font-size: 8px;
     color: var(--bgcolor);
     background-color: var(--textColor);
-    top: 12%;
+    top: 4%;
     left: 3%;
-    padding: 1%;
-}
-
-/* show hint button inside hint button modal */
-#show-hint-btn {
-    margin: 1%;
-    color: var(--bgcolor);
-    background-color: var(--textColor);
-}
-
-/* where strikes are counted in upper right hand corner */
-#counter {
+  }
+  /* Strike font size */
+  #counter {
     position: absolute;
     color: var(--textColor);
-    top: 3%;
-    right: 3%;
-    font-size: 25px;
+    top: 1%;
+    right: 4%;
+    font-size: 10px;
     text-align: center;
-}
-
-/* container for all gameplay elements */
-#game-box {
-    border: 2px solid var(--textColor);
-    margin: 3%;
-    text-align: center;
-}
-
-/* Container for the letters guessed/to be guessed */
-#letter-box {
-    position: relative;
-    top: 30%;
-    font-size: 50px;
-}
-
-/* A-Z letter buttons */
-#ltr-btn {
-    background-color: rgb(49, 49, 49);
-    color: var(--textColor);
-    border-color: black;
-}
-
-#ltr-btn:hover {
-    background-color: var(--bgcolor);
-    color: var(--textColor);
-}
-
-/* container for score submit form modal */
-#leaderboard-submission {
-    text-align: center;
-}
-
-#scoresTitle {
-    text-align: center;
-}
-
-/* p elements of score submit form modal */
-#leaderboard-submission p {
-    margin: 3%
-}
-
-/* hide class used to switch between images */
-.hide {
-    display: none;
-}
-/* Media query used to fit the game on different sized screens */
-/* Fits the screen size for smaller laptop windows */
-@media (max-width: 925px) {
-    /* Adjusting h1 size */
-    #homeTitle {
-        color: var(--textColor);
-        text-align: center;
-        font-size: 60px;
-        font-family: 'Nosifer', sans-serif;
-        /* font-family: 'Metal Mania', sans-serif; */
-    }
-    /* Adjusting quit button size */
-    .q-btn {
-        position: absolute;
-        font-size: 15px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        top: 3%;
-        left: 3%;
-    }
-    /* Adjusting hint button size */
-    .h-btn {
-        position: absolute;
-        font-size: 15px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        top: 9%;
-        left: 3%;
-    }
-    /* Strike font size */
-    #counter {
-        position: absolute;
-        color: var(--textColor);
-        top: 1%;
-        right: 4%;
-        font-size: 20px;
-        text-align: center;
-    }
-}
-/* Fits the screen size for Ipads and Tablets */
-@media (max-width: 768px) {
-        /* Adjusting h1 size */
-    #homeTitle {
-        color: var(--textColor);
-        text-align: center;
-        font-size: 60px;
-        font-family: 'Nosifer', sans-serif;
-        /* font-family: 'Metal Mania', sans-serif; */
-    }
-    /* Adjusting viewport height */
-    body {
-        /* max-width: 100vh; */
-        max-height: 100vh;
-    }
-        /* Adjusting quit button size */
-    .q-btn {
-        position: absolute;
-        font-size: 10px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        top: 1%;
-        left: 3%;
-    }
-        /* Adjusting hint button size */
-    .h-btn {
-        position: absolute;
-        font-size: 10px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        top: 5%;
-        left: 3%;
-    }
-        /* Strike font size */
-    #counter {
-        position: absolute;
-        color: var(--textColor);
-        top: 1%;
-        right: 4%;
-        font-size: 15px;
-        text-align: center;
-    }
-
-    /* Container for the letters guessed/to be guessed */
-    #letter-box {
-        position: relative;
-        top: 20%;
-        font-size: 40px;
-    }
-}
-/* Fits the screen size for most phones */
-@media (max-width: 530px) {
-        /* Adjusting h1 size */
-    #homeTitle {
-        color: var(--textColor);
-        text-align: center;
-        font-size: 40px;
-        font-family: 'Nosifer', sans-serif;
-        /* font-family: 'Metal Mania', sans-serif; */
-    }
-    /* Adjusting viewport height */
-    body {
-        /* max-width: 100vh; */
-        max-height: 100vh;
-    }
-/* Adjusting the size of our start button */
-    .startBtn {
-        font-size: 20px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-/* Adjusting the size of our View Highscores button */
-    .btn {
-        font-size: 15px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        margin: 0;
-        position: absolute;
-        top: 80%;
-        left: 50%;
-        -ms-transform: translate(-50%, -50%);
-        transform: translate(-50%, -50%);
-    }
-/* Adjusting the size of modal content box */
-    .box {
-        background-color: var(--bgcolor);
-        color: var(--textColor);
-        font-size: 10px;
-    }
-/* Adjusting the size of our start button in the modal */
-    .starter {
-        position: absolute;
-        left: 60%;
-        top: 35%;
-        background-color: var(--textColor);
-        color: var(--bgcolor);
-        font-size: 10px;
-    }
-/* Adjusting the size of our font in the high score modal */
-    #scoresTitle {
-        font-size: 16px;
-        color: var(--textColor);
-    }
-        /* Adjusting quit button size */
-    .q-btn {
-        position: absolute;
-        font-size: 8px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        top: 1%;
-        left: 3%;
-    }
-        /* Adjusting hint button size */
-    .h-btn {
-        position: absolute;
-        font-size: 8px;
-        color: var(--bgcolor);
-        background-color: var(--textColor);
-        top: 4%;
-        left: 3%;
-    }
-        /* Strike font size */
-    #counter {
-        position: absolute;
-        color: var(--textColor);
-        top: 1%;
-        right: 4%;
-        font-size: 10px;
-        text-align: center;
-    }
-    
+  }
 }
 /* Fits the screen size for anything smaller than most phones */
 @media (max-width: 370px) {
-            /* Adjusting h1 size */
-    #homeTitle {
-        color: var(--textColor);
-        text-align: center;
-        font-size: 30px;
-        font-family: 'Nosifer', sans-serif;
-        /* font-family: 'Metal Mania', sans-serif; */
-    }
-        /* Adjusting viewport height */
-    body {
-        max-width: 100vh;
-        max-height: 100vh;
-    }
-    /* Strike font size */
-    #counter {
-        position: absolute;
-        color: var(--textColor);
-        top: 1%;
-        right: 4%;
-        font-size: 8px;
-        text-align: center;
-    }
-    /* Adjusting the size of our letter boxes */
-    #letter-box {
-        position: relative;
-        top: 50%;
-        font-size: 40px;
-    }
+  /* Adjusting h1 size */
+  #homeTitle {
+    color: var(--textColor);
+    text-align: center;
+    font-size: 30px;
+    font-family: "Nosifer", sans-serif;
+    /* font-family: 'Metal Mania', sans-serif; */
+  }
+  /* Adjusting viewport height */
+  body {
+    max-width: 100vh;
+    max-height: 100vh;
+  }
+  /* Strike font size */
+  #counter {
+    position: absolute;
+    color: var(--textColor);
+    top: 1%;
+    right: 4%;
+    font-size: 8px;
+    text-align: center;
+  }
+  /* Adjusting the size of our letter boxes */
+  #letter-box {
+    position: relative;
+    top: 50%;
+    font-size: 40px;
+  }
 
-    #letter-box {
-        position: relative;
-        top: 25%;
-        font-size: 30px;
-    }
-
+  #letter-box {
+    position: relative;
+    top: 25%;
+    font-size: 30px;
+  }
 }

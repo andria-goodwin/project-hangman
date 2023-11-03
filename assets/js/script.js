@@ -247,7 +247,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then(function (data) {
-        return data[0].meanings[0].definitions[0].definition;
+        // If the api cannot find a word this error message will display instead
+        if (data.title == "No Definitions Found") {
+          return "Sorry we couldn't find a definition for your word (blame max)";
+        } else {
+          return data[0].meanings[0].definitions[0].definition;
+        }
       });
 
     // return definition;
@@ -262,7 +267,7 @@ document.addEventListener("DOMContentLoaded", () => {
       c = String.fromCharCode(i);
       var button = document.createElement("button");
       button.textContent = c;
-      button.setAttribute("class", "button");
+      button.setAttribute("class", "button font-metal-mania");
       button.setAttribute("id", "ltr-btn");
       box.append(button);
     }
